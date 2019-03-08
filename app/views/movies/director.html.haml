@@ -1,0 +1,16 @@
+%h1 Movies directed by #{@director}
+%table#movies
+    %thead
+        %tr
+            %th Movie Title
+            %th Rating
+            %th Release Date
+            %th More Info
+
+    %tbody
+        - @movies.each do |movie|
+            %tr
+                %th movie.title
+                %th movie.rating
+                %th movie.release_date
+                %th link_to 'More info about #{movie.title}', movie_path(movie)
